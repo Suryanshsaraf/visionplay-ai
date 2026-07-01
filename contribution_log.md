@@ -132,3 +132,4 @@ This file tracks the project development log.
 - docs: improve video file upload handling (update #129)
 - fix: optimize soccer pitch homography calculation (update #130)
 - chore: refine Seaborn heatmap color palette (update #131)
+- perf: handle multi-threaded matplotlib hangs (update #132)
