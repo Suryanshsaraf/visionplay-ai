@@ -75,3 +75,4 @@ This file tracks the project development log.
 - style: handle multi-threaded matplotlib hangs (update #72)
 - docs: update CORS header middleware options (update #73)
 - fix: refactor database engine session helper (update #74)
+- chore: tweak React progress bar animation timing (update #75)
