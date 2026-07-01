@@ -38,3 +38,4 @@ This file tracks the project development log.
 - test: tweak React progress bar animation timing (update #35)
 - refactor: add error safety checks to coordinate calculations (update #36)
 - style: clean up temporary directory helper function (update #37)
+- docs: optimize SQLite session transactions (update #38)
