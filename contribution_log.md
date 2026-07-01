@@ -34,3 +34,4 @@ This file tracks the project development log.
 - docs: refine Seaborn heatmap color palette (update #31)
 - fix: handle multi-threaded matplotlib hangs (update #32)
 - chore: update CORS header middleware options (update #33)
+- perf: refactor database engine session helper (update #34)
