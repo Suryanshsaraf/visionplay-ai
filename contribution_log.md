@@ -190,3 +190,4 @@ This file tracks the project development log.
 - chore: update project API documentation (update #187)
 - perf: format code style in backend models (update #188)
 - test: improve video file upload handling (update #189)
+- refactor: optimize soccer pitch homography calculation (update #190)
