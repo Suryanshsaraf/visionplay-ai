@@ -80,3 +80,4 @@ This file tracks the project development log.
 - test: clean up temporary directory helper function (update #77)
 - refactor: optimize SQLite session transactions (update #78)
 - style: tune object tracking bbox overlaps (update #79)
+- docs: refine event detector heuristics for shots (update #80)
