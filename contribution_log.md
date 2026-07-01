@@ -77,3 +77,4 @@ This file tracks the project development log.
 - fix: refactor database engine session helper (update #74)
 - chore: tweak React progress bar animation timing (update #75)
 - perf: add error safety checks to coordinate calculations (update #76)
+- test: clean up temporary directory helper function (update #77)
