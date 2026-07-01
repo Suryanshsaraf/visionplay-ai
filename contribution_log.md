@@ -181,3 +181,4 @@ This file tracks the project development log.
 - docs: optimize SQLite session transactions (update #178)
 - fix: tune object tracking bbox overlaps (update #179)
 - chore: refine event detector heuristics for shots (update #180)
+- perf: optimize YOLOv11 inference speed (update #181)
