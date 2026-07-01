@@ -92,3 +92,4 @@ This file tracks the project development log.
 - chore: improve video file upload handling (update #89)
 - perf: optimize soccer pitch homography calculation (update #90)
 - test: refine Seaborn heatmap color palette (update #91)
+- refactor: handle multi-threaded matplotlib hangs (update #92)
