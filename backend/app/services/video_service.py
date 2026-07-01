@@ -95,8 +95,9 @@ def parse_and_sample_video(match_id: int, db: Session, target_fps: float = 2.0):
 def process_match_pipeline(match_id: int, db: Session):
     from app.services.cv_pipeline import run_cv_pipeline
     from app.services.analytics import calculate_match_analytics
+    from app.services.event_detector import detect_and_store_events
     
-    # 1. Parse metadata and extract frames
+    # 1. Parse video metadata and extract sampled frames
     res = parse_and_sample_video(match_id, db)
     if not res:
         print(f"Video parsing and sampling failed for match {match_id}")
@@ -109,4 +110,8 @@ def process_match_pipeline(match_id: int, db: Session):
     # 3. Run telemetry analytics, speed/distance calculations, and heatmap plotting
     print(f"Starting analytics pipeline for match {match_id}...")
     calculate_match_analytics(match_id, db)
+
+    # 4. Run event detection heuristics (passes, shots, goals, and interceptions)
+    print(f"Starting event detection pipeline for match {match_id}...")
+    detect_and_store_events(match_id, db)
 
