@@ -147,3 +147,4 @@ This file tracks the project development log.
 - fix: update coordinate mapping calibration (update #144)
 - chore: tune ByteTrack tracking thresholds (update #145)
 - perf: add validation unit tests for frame sampling (update #146)
+- test: update project API documentation (update #147)
