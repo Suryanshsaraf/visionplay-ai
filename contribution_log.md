@@ -169,3 +169,4 @@ This file tracks the project development log.
 - chore: add validation unit tests for frame sampling (update #166)
 - perf: update project API documentation (update #167)
 - test: format code style in backend models (update #168)
+- refactor: improve video file upload handling (update #169)
