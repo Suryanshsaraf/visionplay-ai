@@ -100,3 +100,4 @@ This file tracks the project development log.
 - perf: clean up temporary directory helper function (update #97)
 - test: optimize SQLite session transactions (update #98)
 - refactor: tune object tracking bbox overlaps (update #99)
+- style: refine event detector heuristics for shots (update #100)
