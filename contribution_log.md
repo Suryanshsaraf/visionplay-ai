@@ -65,3 +65,4 @@ This file tracks the project development log.
 - perf: adjust dashboard layout margins (update #62)
 - test: enhance database query efficiency (update #63)
 - refactor: update coordinate mapping calibration (update #64)
+- style: tune ByteTrack tracking thresholds (update #65)
