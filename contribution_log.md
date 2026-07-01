@@ -10,3 +10,4 @@ This file tracks the project development log.
 - test: update project API documentation (update #7)
 - refactor: format code style in backend models (update #8)
 - style: improve video file upload handling (update #9)
+- docs: optimize soccer pitch homography calculation (update #10)
