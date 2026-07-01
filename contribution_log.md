@@ -29,3 +29,4 @@ This file tracks the project development log.
 - chore: add validation unit tests for frame sampling (update #26)
 - perf: update project API documentation (update #27)
 - test: format code style in backend models (update #28)
+- refactor: improve video file upload handling (update #29)
