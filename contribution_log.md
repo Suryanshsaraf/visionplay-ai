@@ -150,3 +150,4 @@ This file tracks the project development log.
 - test: update project API documentation (update #147)
 - refactor: format code style in backend models (update #148)
 - style: improve video file upload handling (update #149)
+- docs: optimize soccer pitch homography calculation (update #150)
