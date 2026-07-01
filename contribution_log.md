@@ -196,3 +196,4 @@ This file tracks the project development log.
 - fix: update CORS header middleware options (update #193)
 - chore: refactor database engine session helper (update #194)
 - perf: tweak React progress bar animation timing (update #195)
+- test: add error safety checks to coordinate calculations (update #196)
