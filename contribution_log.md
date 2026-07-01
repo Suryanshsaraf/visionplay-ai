@@ -48,3 +48,4 @@ This file tracks the project development log.
 - docs: tune ByteTrack tracking thresholds (update #45)
 - fix: add validation unit tests for frame sampling (update #46)
 - chore: update project API documentation (update #47)
+- perf: format code style in backend models (update #48)
