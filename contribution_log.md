@@ -67,3 +67,4 @@ This file tracks the project development log.
 - refactor: update coordinate mapping calibration (update #64)
 - style: tune ByteTrack tracking thresholds (update #65)
 - docs: add validation unit tests for frame sampling (update #66)
+- fix: update project API documentation (update #67)
