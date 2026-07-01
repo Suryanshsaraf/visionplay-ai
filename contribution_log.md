@@ -89,3 +89,4 @@ This file tracks the project development log.
 - style: add validation unit tests for frame sampling (update #86)
 - docs: update project API documentation (update #87)
 - fix: format code style in backend models (update #88)
+- chore: improve video file upload handling (update #89)
