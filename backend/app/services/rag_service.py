@@ -59,7 +59,7 @@ def index_match_events(match_id: int, db: Session):
     ids = []
 
     for ev in events:
-        doc = f"Timestamp: {ev.timestamp:.2f}s | Event: {ev.event_type.upper()} | {ev.description}"
+        doc = f"[{ev.timestamp:.2f}s] {ev.event_type.upper()} | {ev.description}"
         meta = {
             "match_id": match_id,
             "timestamp": float(ev.timestamp),

@@ -79,3 +79,9 @@ class ChatSessionResponse(BaseModel):
 
 class ChatRequest(BaseModel):
     query: str
+
+class ChatSessionCreate(BaseModel):
+    match_id: int
+
+class ChatMessageCreate(BaseModel):
+    content: str

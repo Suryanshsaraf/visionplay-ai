@@ -80,3 +80,83 @@ def get_match(match_id: int, db: Session = Depends(get_db)):
     if not match_record:
         raise HTTPException(status_code=404, detail="Match not found")
     return match_record
+
+import re
+from app.services.llm_service import generate_rag_response
+
+@app.post("/chat/session", response_model=schemas.ChatSessionResponse)
+def create_chat_session(payload: schemas.ChatSessionCreate, db: Session = Depends(get_db)):
+    # Validate match exists
+    match_record = db.query(models.Match).filter(models.Match.id == payload.match_id).first()
+    if not match_record:
+        raise HTTPException(status_code=404, detail="Match not found")
+
+    session = models.ChatSession(match_id=payload.match_id)
+    db.add(session)
+    db.commit()
+    db.refresh(session)
+    return session
+
+@app.post("/chat/session/{session_id}/message", response_model=schemas.MessageResponse)
+def send_chat_message(session_id: int, payload: schemas.ChatMessageCreate, db: Session = Depends(get_db)):
+    session = db.query(models.ChatSession).filter(models.ChatSession.id == session_id).first()
+    if not session:
+        raise HTTPException(status_code=404, detail="Chat session not found")
+
+    # 1. Save user message
+    user_msg = models.Message(
+        session_id=session_id,
+        role="user",
+        content=payload.content
+    )
+    db.add(user_msg)
+    db.commit()
+
+    # 2. Run Conversational RAG LLM pipeline
+    response_text = generate_rag_response(session.match_id, payload.content)
+
+    # 3. Extract float timestamp citations (e.g. from '[12.34s]')
+    citations = [float(x) for x in re.findall(r"\[(\d+(?:\.\d+)?)s\]", response_text)]
+
+    # 4. Save assistant message
+    assistant_msg = models.Message(
+        session_id=session_id,
+        role="assistant",
+        content=response_text,
+        citations=citations if citations else None
+    )
+    db.add(assistant_msg)
+    db.commit()
+    db.refresh(assistant_msg)
+
+    return assistant_msg
+
+@app.get("/chat/session/{session_id}/messages", response_model=List[schemas.MessageResponse])
+def get_chat_messages(session_id: int, db: Session = Depends(get_db)):
+    session = db.query(models.ChatSession).filter(models.ChatSession.id == session_id).first()
+    if not session:
+        raise HTTPException(status_code=404, detail="Chat session not found")
+        
+    return db.query(models.Message).filter(models.Message.session_id == session_id).order_by(models.Message.created_at.asc()).all()
+
+@app.get("/match/{match_id}/stats", response_model=schemas.MatchStatsResponse)
+def get_match_stats(match_id: int, db: Session = Depends(get_db)):
+    stats = db.query(models.MatchStats).filter(models.MatchStats.match_id == match_id).first()
+    if not stats:
+        return models.MatchStats(
+            match_id=match_id,
+            possession_team_1=50.0,
+            possession_team_2=50.0,
+            total_passes_team_1=0,
+            total_passes_team_2=0,
+            total_shots_team_1=0,
+            total_shots_team_2=0,
+            distance_team_1=0.0,
+            distance_team_2=0.0
+        )
+    return stats
+
+@app.get("/match/{match_id}/events", response_model=List[schemas.MatchEventResponse])
+def get_match_events(match_id: int, db: Session = Depends(get_db)):
+    return db.query(models.MatchEvent).filter(models.MatchEvent.match_id == match_id).order_by(models.MatchEvent.timestamp.asc()).all()
+
