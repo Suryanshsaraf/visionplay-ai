@@ -60,3 +60,4 @@ This file tracks the project development log.
 - refactor: clean up temporary directory helper function (update #57)
 - style: optimize SQLite session transactions (update #58)
 - docs: tune object tracking bbox overlaps (update #59)
+- fix: refine event detector heuristics for shots (update #60)
