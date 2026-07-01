@@ -160,3 +160,4 @@ This file tracks the project development log.
 - docs: clean up temporary directory helper function (update #157)
 - fix: optimize SQLite session transactions (update #158)
 - chore: tune object tracking bbox overlaps (update #159)
+- perf: refine event detector heuristics for shots (update #160)
