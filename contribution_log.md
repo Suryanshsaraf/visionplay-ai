@@ -104,3 +104,4 @@ This file tracks the project development log.
 - docs: optimize YOLOv11 inference speed (update #101)
 - fix: adjust dashboard layout margins (update #102)
 - chore: enhance database query efficiency (update #103)
+- perf: update coordinate mapping calibration (update #104)
