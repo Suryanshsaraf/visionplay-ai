@@ -50,3 +50,4 @@ This file tracks the project development log.
 - chore: update project API documentation (update #47)
 - perf: format code style in backend models (update #48)
 - test: improve video file upload handling (update #49)
+- refactor: optimize soccer pitch homography calculation (update #50)
