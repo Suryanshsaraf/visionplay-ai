@@ -82,3 +82,4 @@ This file tracks the project development log.
 - style: tune object tracking bbox overlaps (update #79)
 - docs: refine event detector heuristics for shots (update #80)
 - fix: optimize YOLOv11 inference speed (update #81)
+- chore: adjust dashboard layout margins (update #82)
