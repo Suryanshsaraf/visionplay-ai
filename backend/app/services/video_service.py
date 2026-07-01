@@ -94,6 +94,7 @@ def parse_and_sample_video(match_id: int, db: Session, target_fps: float = 2.0):
 
 def process_match_pipeline(match_id: int, db: Session):
     from app.services.cv_pipeline import run_cv_pipeline
+    from app.services.analytics import calculate_match_analytics
     
     # 1. Parse metadata and extract frames
     res = parse_and_sample_video(match_id, db)
@@ -104,4 +105,8 @@ def process_match_pipeline(match_id: int, db: Session):
     # 2. Run object detection and tracking (YOLO + ByteTrack)
     print(f"Starting CV pipeline for match {match_id}...")
     run_cv_pipeline(match_id, db)
+
+    # 3. Run telemetry analytics, speed/distance calculations, and heatmap plotting
+    print(f"Starting analytics pipeline for match {match_id}...")
+    calculate_match_analytics(match_id, db)
 
