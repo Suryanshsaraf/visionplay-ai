@@ -170,3 +170,4 @@ This file tracks the project development log.
 - perf: update project API documentation (update #167)
 - test: format code style in backend models (update #168)
 - refactor: improve video file upload handling (update #169)
+- style: optimize soccer pitch homography calculation (update #170)
