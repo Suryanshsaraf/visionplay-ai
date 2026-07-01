@@ -126,3 +126,4 @@ This file tracks the project development log.
 - fix: enhance database query efficiency (update #123)
 - chore: update coordinate mapping calibration (update #124)
 - perf: tune ByteTrack tracking thresholds (update #125)
+- test: add validation unit tests for frame sampling (update #126)
