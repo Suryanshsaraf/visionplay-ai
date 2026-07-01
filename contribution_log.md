@@ -78,3 +78,4 @@ This file tracks the project development log.
 - chore: tweak React progress bar animation timing (update #75)
 - perf: add error safety checks to coordinate calculations (update #76)
 - test: clean up temporary directory helper function (update #77)
+- refactor: optimize SQLite session transactions (update #78)
