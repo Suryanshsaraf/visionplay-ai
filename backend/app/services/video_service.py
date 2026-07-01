@@ -96,6 +96,7 @@ def process_match_pipeline(match_id: int, db: Session):
     from app.services.cv_pipeline import run_cv_pipeline
     from app.services.analytics import calculate_match_analytics
     from app.services.event_detector import detect_and_store_events
+    from app.services.rag_service import index_match_events
     
     # 1. Parse video metadata and extract sampled frames
     res = parse_and_sample_video(match_id, db)
@@ -114,4 +115,8 @@ def process_match_pipeline(match_id: int, db: Session):
     # 4. Run event detection heuristics (passes, shots, goals, and interceptions)
     print(f"Starting event detection pipeline for match {match_id}...")
     detect_and_store_events(match_id, db)
+
+    # 5. Index detected events into ChromaDB vector database for semantic chat search
+    print(f"Indexing timeline events to vector database for match {match_id}...")
+    index_match_events(match_id, db)
 
