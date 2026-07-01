@@ -165,3 +165,4 @@ This file tracks the project development log.
 - refactor: adjust dashboard layout margins (update #162)
 - style: enhance database query efficiency (update #163)
 - docs: update coordinate mapping calibration (update #164)
+- fix: tune ByteTrack tracking thresholds (update #165)
