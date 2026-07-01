@@ -28,6 +28,9 @@ app.add_middleware(
 UPLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+from fastapi.staticfiles import StaticFiles
+app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
+
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the VisionPlay AI API. Run /docs for interactive API documentation."}
