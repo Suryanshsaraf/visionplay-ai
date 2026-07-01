@@ -102,3 +102,4 @@ This file tracks the project development log.
 - refactor: tune object tracking bbox overlaps (update #99)
 - style: refine event detector heuristics for shots (update #100)
 - docs: optimize YOLOv11 inference speed (update #101)
+- fix: adjust dashboard layout margins (update #102)
