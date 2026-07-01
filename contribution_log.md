@@ -153,3 +153,4 @@ This file tracks the project development log.
 - docs: optimize soccer pitch homography calculation (update #150)
 - fix: refine Seaborn heatmap color palette (update #151)
 - chore: handle multi-threaded matplotlib hangs (update #152)
+- perf: update CORS header middleware options (update #153)
