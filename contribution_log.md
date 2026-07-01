@@ -71,3 +71,4 @@ This file tracks the project development log.
 - chore: format code style in backend models (update #68)
 - perf: improve video file upload handling (update #69)
 - test: optimize soccer pitch homography calculation (update #70)
+- refactor: refine Seaborn heatmap color palette (update #71)
