@@ -59,3 +59,4 @@ This file tracks the project development log.
 - test: add error safety checks to coordinate calculations (update #56)
 - refactor: clean up temporary directory helper function (update #57)
 - style: optimize SQLite session transactions (update #58)
+- docs: tune object tracking bbox overlaps (update #59)
