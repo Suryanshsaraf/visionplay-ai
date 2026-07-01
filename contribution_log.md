@@ -118,3 +118,4 @@ This file tracks the project development log.
 - docs: tweak React progress bar animation timing (update #115)
 - fix: add error safety checks to coordinate calculations (update #116)
 - chore: clean up temporary directory helper function (update #117)
+- perf: optimize SQLite session transactions (update #118)
