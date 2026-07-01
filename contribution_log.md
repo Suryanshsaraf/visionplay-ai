@@ -5,3 +5,4 @@ This file tracks the project development log.
 - style: adjust dashboard layout margins (update #2)
 - docs: enhance database query efficiency (update #3)
 - fix: update coordinate mapping calibration (update #4)
+- chore: tune ByteTrack tracking thresholds (update #5)
