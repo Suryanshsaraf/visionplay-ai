@@ -25,3 +25,4 @@ This file tracks the project development log.
 - refactor: adjust dashboard layout margins (update #22)
 - style: enhance database query efficiency (update #23)
 - docs: update coordinate mapping calibration (update #24)
+- fix: tune ByteTrack tracking thresholds (update #25)
