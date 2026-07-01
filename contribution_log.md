@@ -86,3 +86,4 @@ This file tracks the project development log.
 - perf: enhance database query efficiency (update #83)
 - test: update coordinate mapping calibration (update #84)
 - refactor: tune ByteTrack tracking thresholds (update #85)
+- style: add validation unit tests for frame sampling (update #86)
