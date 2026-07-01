@@ -179,3 +179,4 @@ This file tracks the project development log.
 - refactor: add error safety checks to coordinate calculations (update #176)
 - style: clean up temporary directory helper function (update #177)
 - docs: optimize SQLite session transactions (update #178)
+- fix: tune object tracking bbox overlaps (update #179)
