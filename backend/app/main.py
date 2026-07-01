@@ -8,7 +8,7 @@ from typing import List
 from app.database import engine, Base, get_db
 from app.models import models
 from app.schemas import schemas
-from app.services.video_service import parse_and_sample_video
+from app.services.video_service import process_match_pipeline
 
 # Create tables in the database (SQLite for local, Postgres for prod)
 Base.metadata.create_all(bind=engine)
@@ -65,8 +65,8 @@ def upload_video(
     db.commit()
     db.refresh(match_record)
 
-    # Queue background task to process metadata and sample frames
-    background_tasks.add_task(parse_and_sample_video, match_record.id, db)
+    # Queue background task to process metadata, sample frames, and run CV pipeline
+    background_tasks.add_task(process_match_pipeline, match_record.id, db)
 
     return match_record
 

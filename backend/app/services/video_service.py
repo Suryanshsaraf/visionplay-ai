@@ -80,8 +80,8 @@ def parse_and_sample_video(match_id: int, db: Session, target_fps: float = 2.0):
 
     cap.release()
 
-    # Update status to completed for Chunk 2 validation
-    match_record.status = "completed"
+    # Update status to sampled
+    match_record.status = "sampled"
     db.commit()
 
     print(f"Successfully processed match {match_id}. Sampled {sampled_count} frames at {target_fps} FPS.")
@@ -91,3 +91,17 @@ def parse_and_sample_video(match_id: int, db: Session, target_fps: float = 2.0):
         "original_fps": original_fps,
         "total_frames": total_frames
     }
+
+def process_match_pipeline(match_id: int, db: Session):
+    from app.services.cv_pipeline import run_cv_pipeline
+    
+    # 1. Parse metadata and extract frames
+    res = parse_and_sample_video(match_id, db)
+    if not res:
+        print(f"Video parsing and sampling failed for match {match_id}")
+        return
+        
+    # 2. Run object detection and tracking (YOLO + ByteTrack)
+    print(f"Starting CV pipeline for match {match_id}...")
+    run_cv_pipeline(match_id, db)
+
