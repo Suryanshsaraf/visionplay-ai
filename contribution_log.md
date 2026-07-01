@@ -151,3 +151,4 @@ This file tracks the project development log.
 - refactor: format code style in backend models (update #148)
 - style: improve video file upload handling (update #149)
 - docs: optimize soccer pitch homography calculation (update #150)
+- fix: refine Seaborn heatmap color palette (update #151)
