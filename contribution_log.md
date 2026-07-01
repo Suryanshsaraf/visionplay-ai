@@ -63,3 +63,4 @@ This file tracks the project development log.
 - fix: refine event detector heuristics for shots (update #60)
 - chore: optimize YOLOv11 inference speed (update #61)
 - perf: adjust dashboard layout margins (update #62)
+- test: enhance database query efficiency (update #63)
