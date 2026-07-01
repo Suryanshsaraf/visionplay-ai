@@ -90,3 +90,4 @@ This file tracks the project development log.
 - docs: update project API documentation (update #87)
 - fix: format code style in backend models (update #88)
 - chore: improve video file upload handling (update #89)
+- perf: optimize soccer pitch homography calculation (update #90)
