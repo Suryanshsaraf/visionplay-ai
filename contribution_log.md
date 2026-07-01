@@ -15,3 +15,4 @@ This file tracks the project development log.
 - chore: handle multi-threaded matplotlib hangs (update #12)
 - perf: update CORS header middleware options (update #13)
 - test: refactor database engine session helper (update #14)
+- refactor: tweak React progress bar animation timing (update #15)
