@@ -139,3 +139,4 @@ This file tracks the project development log.
 - docs: add error safety checks to coordinate calculations (update #136)
 - fix: clean up temporary directory helper function (update #137)
 - chore: optimize SQLite session transactions (update #138)
+- perf: tune object tracking bbox overlaps (update #139)
