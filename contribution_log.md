@@ -94,3 +94,4 @@ This file tracks the project development log.
 - test: refine Seaborn heatmap color palette (update #91)
 - refactor: handle multi-threaded matplotlib hangs (update #92)
 - style: update CORS header middleware options (update #93)
+- docs: refactor database engine session helper (update #94)
