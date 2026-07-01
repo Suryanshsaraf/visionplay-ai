@@ -172,3 +172,4 @@ This file tracks the project development log.
 - refactor: improve video file upload handling (update #169)
 - style: optimize soccer pitch homography calculation (update #170)
 - docs: refine Seaborn heatmap color palette (update #171)
+- fix: handle multi-threaded matplotlib hangs (update #172)
