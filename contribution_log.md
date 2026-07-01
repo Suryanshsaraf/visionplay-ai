@@ -46,3 +46,4 @@ This file tracks the project development log.
 - refactor: enhance database query efficiency (update #43)
 - style: update coordinate mapping calibration (update #44)
 - docs: tune ByteTrack tracking thresholds (update #45)
+- fix: add validation unit tests for frame sampling (update #46)
