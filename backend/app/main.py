@@ -8,6 +8,7 @@ from typing import List
 from app.database import engine, Base, get_db
 from app.models import models
 from app.schemas import schemas
+from app.services.video_service import parse_and_sample_video
 
 # Create tables in the database (SQLite for local, Postgres for prod)
 Base.metadata.create_all(bind=engine)
@@ -32,7 +33,11 @@ def read_root():
     return {"message": "Welcome to the VisionPlay AI API. Run /docs for interactive API documentation."}
 
 @app.post("/upload-video", response_model=schemas.MatchResponse)
-def upload_video(file: UploadFile = File(...), db: Session = Depends(get_db)):
+def upload_video(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+    db: Session = Depends(get_db)
+):
     # Validate extension
     ext = os.path.splitext(file.filename)[1].lower()
     if ext not in [".mp4", ".mov", ".avi", ".mkv"]:
@@ -59,6 +64,9 @@ def upload_video(file: UploadFile = File(...), db: Session = Depends(get_db)):
     db.add(match_record)
     db.commit()
     db.refresh(match_record)
+
+    # Queue background task to process metadata and sample frames
+    background_tasks.add_task(parse_and_sample_video, match_record.id, db)
 
     return match_record
 
