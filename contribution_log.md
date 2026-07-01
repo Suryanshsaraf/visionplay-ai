@@ -109,3 +109,4 @@ This file tracks the project development log.
 - refactor: add validation unit tests for frame sampling (update #106)
 - style: update project API documentation (update #107)
 - docs: format code style in backend models (update #108)
+- fix: improve video file upload handling (update #109)
