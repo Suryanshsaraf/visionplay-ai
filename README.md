@@ -8,7 +8,6 @@ Instead of manually clipping match segments, users can upload match footage and 
 
 ## 🚀 Key Features
 
-*   **Apple Silicon M4 Hardware Acceleration:** Auto-detects and leverages macOS Metal Performance Shaders (`device="mps"`) to process deep learning inference directly on the MacBook Air GPU cores.
 *   **Computer Vision Tracking (YOLOv11 + ByteTrack):** Employs YOLOv11 and ByteTrack to track players, ball, and referee locations across sampled video frames.
 *   **Telemetry Analytics Engine:** Automatically calculates team possession percentages, individual player velocities, sprint metrics, and cumulative distances covered.
 *   **Tactical Event Timeline:** Rule-based heuristics dynamically parse possession logs to output key events (Passes, Interceptions, Shots, and Goals).
